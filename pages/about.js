@@ -1,14 +1,15 @@
 import Head from "next/head";
-import Image from "next/image";
 
-export default function Home() {
+function about() {
   return (
     <div>
       <Head>
-        <title>Web Dev Newz</title>
+        <title>About</title>
         <meta name="keywords" content="web development, programming" />
       </Head>
-      <h1>welcome to Next</h1>
+      <h1>About Me</h1>
     </div>
   );
 }
+
+export default about;
