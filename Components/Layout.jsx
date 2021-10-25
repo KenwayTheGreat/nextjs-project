@@ -1,11 +1,14 @@
+import Nav from "../Components/Nav";
 import styles from "../styles/Layout.module.css";
-import React from "react";
 
 function Layout({ children }) {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>{children}</main>
-    </div>
+    <>
+      <Nav />
+      <div className={styles.container}>
+        <main className={styles.main}>{children}</main>
+      </div>
+    </>
   );
 }
 
