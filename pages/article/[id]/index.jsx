@@ -1,6 +1,7 @@
-import { server } from "../config";
+import { server } from "../../../config";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Meta from "../../../Components/meta";
 
 function article({ article }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -9,6 +10,7 @@ function article({ article }) {
 
   return (
     <>
+      <Meta title={article.title} description={article.excerpt} />
       <h1>{article.title}</h1>
       <p>{article.body}</p>
       <br />
@@ -18,9 +20,7 @@ function article({ article }) {
 }
 
 export const getStaticProps = async (context) => {
-  const result = await fetch(
-    `${server}/api/articles/${context.params.id}`
-  );
+  const result = await fetch(`${server}/api/articles/${context.params.id}`);
   const article = await result.json();
 
   return {

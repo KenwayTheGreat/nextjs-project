@@ -1,14 +1,9 @@
 import { server } from "../config";
-import Head from "next/head";
 import ArticleList from "../Components/ArticleList";
 
 export default function Home({ articles }) {
   return (
     <div>
-      <Head>
-        <title>Web Dev Newz</title>
-        <meta name="keywords" content="web development, programming" />
-      </Head>
       <ArticleList articles={articles} />
     </div>
   );
